@@ -1,19 +1,31 @@
-# Projeto: Cartão de Visitas (card-business) - Python/Flask
-### 1 - O que é?
-Cartão de visitas web desenvolvido em Python com Flask com intuito educacional.
+# Cartão de Visitas Digital com Flask e Docker
 
-### 2 - Pré-requisitos
-- Python (versão 3)
-- Pip
-- Flask
+## Sobre o Projeto
 
-**2.1 - Instalação dos pré-requisitos (Exemplo: GNU/Linux Debian 11)**
-1. Atualize os repositórios com `sudo apt update` 
-2. Instale os pacotes `sudo apt install python3.9 python3.9-dev python3.9-venv python3-pip -y`
-3. Atualize o pip com `sudo pip3 install --upgrade pip`
+Este projeto é um aplicativo web de cartão de visitas desenvolvido em Python com Flask e Dockerizado para facilitar a implantação e distribuição. O aplicativo exibe um cartão de negócios digital que pode ser personalizado através de variáveis de ambiente.
 
-### 3 - Configurando variáveis de ambiente
-O projeto trabalha com algumas variáveis de ambientes para definir valores presentes no cartão web, são elas:
+## Pré-requisitos
+
+- Docker
+
+## Como Usar
+
+1. **Pull da imagem Docker**: Primeiro, faça o pull da imagem Docker do Docker Hub usando o seguinte comando:
+
+```bash
+docker pull tatianysouza/card-business:1.0
+```
+
+2. **Execute o contêiner Docker**: Em seguida, execute o contêiner Docker com o seguinte comando:
+
+```bash
+docker run -it -p 8080:8080 tatianysouza/card-business:1.0
+```
+
+## Variáveis de Ambiente
+
+O aplicativo usa as seguintes variáveis de ambiente para personalizar o cartão de negócios:
+
 - LOGOMARCA
 - FOTO
 - NOME
@@ -22,31 +34,14 @@ O projeto trabalha com algumas variáveis de ambientes para definir valores pres
 - PROFISSAO
 - SITE
 
-Exporte-as para aplicar seus valores.
-Você pode defini-las em algum local de sua preferência de modo que sejam carregadas no sistema.
+Essas variáveis são definidas no Dockerfile.
 
-**3.1 - Exportando Variáveis de Ambiente**
+## Acessando o Aplicativo
 
-Adicione o trecho abaixo ao `/etc/profile`, por exemplo:
-```bash
-export LOGOMARCA='DEFINA UM VALOR'
-export FOTO='DEFINA UM VALOR'
-export NOME='DEFINA UM VALOR'
-export IDADE='DEFINA UM VALOR'
-export EMAIL='DEFINA UM VALOR'
-export PROFISSAO='DEFINA UM VALOR'
-export SITE='DEFINA UM VALOR'
-```
-E aplique suas configurações com `source /etc/profile`
+Com a aplicação em execução, abra o navegador em localhost:8080.
 
-### 4 - Como executar (Exemplo: GNU/Linux Debian 11)?
-**Crie um ambiente virtual**
-1. Entre no diretório do projeto e execute `python3 -m venv venv`
-2. Ative o ambiente virtual com `source venv/bin/activate`
-3. Instale as dependências com `pip install --no-cache-dir -r requirements.txt`
+## Contribuições
 
-**Execute o projeto**
-1. Execute com `python app.py`
+Contribuições são sempre bem-vindas! Sinta-se à vontade para abrir uma Issue ou fazer um Pull Request.
 
-### 5 - Como Acessar?
-Com a aplicação em execução abra o navegador em `localhost:8080`
+
